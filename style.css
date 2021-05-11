@@ -1,0 +1,162 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    color:rgb(207, 207, 207);
+}
+
+body{
+    background: rgb(22, 22, 22);
+}
+
+header{
+    background: rgb(43, 43, 43);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 40px;
+}
+
+.logo{
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+ul{
+    display: flex;
+    justify-content: space-around;
+    width: 30vw;
+}
+
+.nav{
+    display: none;
+    height: 5vh;
+}
+
+ul li button{
+    background: transparent;
+    border: none;
+    padding: 7px 10px;
+}
+
+.img{
+    width: 32vw;
+    height: 100%;
+    margin: 0.4vw;
+    animation:FadeIn 2s;
+}
+
+section{
+    width: auto;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.message{
+    position: absolute;
+    top: 30vw;
+    font-size: 5vw;
+    font-family: 'Roboto', sans-serif;
+    text-shadow: 5px 5px 10px rgb(0, 0, 0);
+}
+
+@keyframes FadeIn {
+        0% {
+            opacity:0;
+            transform: translateY(-20px);
+        }
+        100% {
+            opacity:1;
+        }
+    }
+
+.sub-sec{
+    display: flex;
+    justify-content: space-around;
+    margin: 1vw 2vw;
+}
+
+.sub-sec button{
+    border: none;
+    background: rgb(43, 43, 43);
+    width: 30vw;
+    height: 7vh;
+    margin: 2vw;
+    border-radius: 20px;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.sub-sec button:hover{
+    animation: pop 0.8s;
+    background: rgb(182, 21, 21);
+}
+
+ul li button:hover{
+    background: rgb(182, 21, 21);
+    border-radius: 3px;
+}
+
+button:focus{
+    outline: 0;
+}
+
+@keyframes pop {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 900px){
+
+    .nav{
+        display: block;
+        cursor: pointer;
+    }
+
+    .nav-active{
+        transform: translateX(0);
+    }
+
+    ul{
+        position: absolute;
+        right: 0;
+        top: 60px;
+        width: 50vw;
+        height: 100vh;
+        background: rgb(43, 43, 43);
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: flex-start;
+        transform: translateX(100%);
+        transition: transform 0.5s;
+    }
+
+
+    ul li button{
+        font-size: 20px;
+        margin: 20px 0;
+        padding: 10px 20px;
+    }
+
+    ul li button:hover{
+        border-radius: 3px;
+    }
+
+    .sub-sec button{
+        font-size: 15px;
+        padding: 0 10px;
+    }
+}
